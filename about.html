@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the Lebanon Weather & Travel Explorer project.">
+  <title>Lebanon Weather & Travel Explorer | About</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <button class="sidebar-toggle" type="button" aria-controls="siteSidebar" aria-expanded="false" aria-label="Open sidebar menu" data-sidebar-toggle>
+    <span class="sidebar-toggle-lines" aria-hidden="true"></span>
+  </button>
+
+  <div class="sidebar-overlay" data-sidebar-overlay></div>
+
+  <aside class="site-sidebar" id="siteSidebar" aria-label="Sidebar navigation" data-sidebar>
+    <a class="sidebar-title" href="index.html">Lebanon Explorer</a>
+    <nav class="sidebar-nav" aria-label="Sidebar menu">
+      <a class="sidebar-link" href="index.html">Home</a>
+      <a class="sidebar-link" href="destinations.html">Destinations</a>
+      <a class="sidebar-link" href="weather.html">Weather</a>
+      <a class="sidebar-link active" aria-current="page" href="about.html">About</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <p class="section-label">Project Information</p>
+        <h1>About / Engineering Log</h1>
+        <p class="lead">Lebanon Weather & Travel Explorer is a front-end final project by Charbel Chehade that combines curated Lebanese travel content with current weather lookup tools.</p>
+
+        <div class="about-content">
+          <article class="about-panel">
+            <h2>Project Idea</h2>
+            <p>The goal of this website is to help users explore real places in Lebanon and make basic travel decisions before visiting. The site includes a home page, a searchable destinations page, a weather page, and this engineering log.</p>
+            <p>The project focuses on front-end development requirements: semantic HTML5, hand-written CSS3, Bootstrap 5, Flexbox, vanilla JavaScript, ES6 classes, responsive layout, and public API integration.</p>
+          </article>
+
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <article class="about-panel h-100">
+                <h2>API Used</h2>
+                <p>The weather page uses the OpenWeather Current Weather API to request live weather data for Lebanese cities. The interface displays the city name, temperature, condition, humidity, and wind speed.</p>
+                <p>The private API key is not hardcoded into the project. A clearly marked placeholder is kept in <code>assets/js/weather.js</code> so a tester can add a personal key locally.</p>
+              </article>
+            </div>
+            <div class="col-lg-6">
+              <article class="about-panel h-100">
+                <h2>Curated Data</h2>
+                <p>The destinations page uses local curated content from <code>assets/js/data.js</code>. The data includes real Lebanese places such as Baalbek, Jeita Grotto, Byblos, Cedars of God, Tyre, Batroun, Beiteddine, Qadisha Valley, Anjar, and Raouche.</p>
+                <p>Each destination includes structured fields such as region, city, category, short description, best season, estimated visit time, image, tags, coordinates, and featured status.</p>
+              </article>
+            </div>
+          </div>
+
+          <article class="about-panel">
+            <h2>Custom Requirement</h2>
+            <p>Charbel Chehade's custom requirement is a collapsible sidebar menu on smaller screens. On larger screens, the sidebar remains visible. On smaller screens, it opens behind a menu button, closes smoothly, updates <code>aria-expanded</code>, and closes when a mobile navigation link is clicked.</p>
+            <p>This requirement is implemented with vanilla JavaScript in <code>assets/js/sidebar.js</code> using an ES6 class.</p>
+          </article>
+
+          <article class="about-panel">
+            <h2>Main Technical Decisions</h2>
+            <ul class="about-list">
+              <li>Bootstrap 5 is used for the responsive navigation, form controls, buttons, cards, grid helpers, and utility classes.</li>
+              <li>Custom CSS is kept in <code>assets/css/styles.css</code> for project-specific layout, sidebar behavior, cards, hero styling, filters, and weather states.</li>
+              <li>Vanilla JavaScript is organized with ES6 classes: <code>SidebarMenu</code>, <code>DestinationExplorer</code>, <code>FeaturedDestinations</code>, <code>WeatherService</code>, and <code>WeatherPage</code>.</li>
+              <li>The destination data is stored locally so the page can render curated content without requiring an external content API.</li>
+              <li>The weather feature separates API calls from UI behavior by using a service class and a page class.</li>
+              <li>The OpenWeather key remains a placeholder to avoid exposing a private secret in front-end source code.</li>
+            </ul>
+          </article>
+
+          <section class="about-panel" aria-labelledby="developmentLogHeading">
+            <h2 id="developmentLogHeading">Development Log</h2>
+            <div class="development-log">
+              <article>
+                <h3>1. Project structure</h3>
+                <p>Created the initial pages, shared stylesheet, Bootstrap CDN setup, navigation, and README documentation.</p>
+              </article>
+              <article>
+                <h3>2. Custom sidebar</h3>
+                <p>Added the responsive sidebar menu and JavaScript behavior required for Charbel Chehade's custom feature.</p>
+              </article>
+              <article>
+                <h3>3. Local destination data</h3>
+                <p>Built a structured data file containing real Lebanese destinations with categories, regions, coordinates, images, and featured flags.</p>
+              </article>
+              <article>
+                <h3>4. Destination explorer</h3>
+                <p>Implemented searchable and filterable destination cards using vanilla JavaScript and Bootstrap card structure.</p>
+              </article>
+              <article>
+                <h3>5. Weather integration</h3>
+                <p>Added OpenWeather current weather lookup with loading, help, validation, result, and error states.</p>
+              </article>
+              <article>
+                <h3>6. Home page polish</h3>
+                <p>Improved the home page with a hero section, calls to action, featured destination cards, and a short explanation of the site workflow.</p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="mb-0">&copy; 2026 Charbel Chehade</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+</body>
+</html>
