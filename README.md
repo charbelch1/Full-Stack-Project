@@ -82,3 +82,6 @@ What needed correction:
 - API key handling needed review to avoid publishing private credentials.
 
 I reviewed, edited, and adapted the project to match personal preferences and university requirements.
+
+##Live Demo
+https://full-stack-project-sable-xi.vercel.app/index.html
